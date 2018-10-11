@@ -1,5 +1,7 @@
 class Gif < ApplicationRecord
-	# Create tags from title of gif
-	def create_tag
+	after_create :create_tags
+
+	# Parse the Gif title to create and associate Tags
+	def create_tags
 	end
 end

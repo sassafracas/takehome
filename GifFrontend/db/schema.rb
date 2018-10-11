@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20181010195519) do
   create_table "users", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name", null: false
     t.string "email", null: false
     t.string "encrypted_password", limit: 128, null: false
     t.string "confirmation_token", limit: 128

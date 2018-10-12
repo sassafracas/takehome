@@ -56,8 +56,8 @@ GifFrontend
 1. Update the React app on the "feed" view to make a request to the GifService API to retrieve all Gifs when it first mounts. Show each of the Gifs on the "feed" page along with each of the tags that are associated to them. Style the view however you like! 
 2. Add a search bar to the React app on the "feed" view. The search bar should hit the GifService API to retrieve any Gifs matching the search query (using the action from GifService exercise #5) and then show only those Gifs on the view.
 3. Create a new SavedGif model in the GifFrontend application (including a new database table), which will be used to store any "saved" Gifs. Add an association between Users and SavedGifs. When creating the migration for this new table, keep in mind that there will be no association between the SavedGifs and Gifs models as they live on separate databases, so any data will need to replicated on the SavedGif model. 
-4. Create a button for each GIF on the "feed" view that allows a User to save a GIF. This button should hit a new route on the GifFrontend application to save the GIF, not the GifService API.
-5. Update the "profile" view to show any GIFs that a User has saved. Add a button to each saved GIF to allow a User to remove a saved GIF from their profile.
+4. Create a button for each GIF on the "feed" view that allows a User to save a GIF. This button should hit a new route on the GifFrontend application to save the GIF. (reminder: the `signed_in?` helper method can be used to check if a user is signed in, the `current_user` helper method will return the signed in user if there is one)
+5. Update the "profile" view to show any GIFs that a User has saved. Add a button to each saved GIF to allow a User to remove a saved GIF from their profile. Again, this button should make a request to a new route on the GifFrontend application. 
 
 
 # Submission

@@ -23,7 +23,7 @@ The exercises will involve creating additional database tables and models to sup
 
 Authentication for Users has already been implemented using the Clearance gem, so you will be able to sign up new Users and login as existing Users.
 
-**Please read the instructions carefully when completing the excercises below**. If you get stuck or anything is unclear, please feel free to reach out to us.
+**Please read the instructions carefully when completing the exercises below**. If you get stuck or anything is unclear, please feel free to reach out to us.
 
 # Prerequisites
 To run the application you'll need the following:
@@ -36,20 +36,21 @@ To run the application you'll need the following:
 2. Install the project dependencies for GifFrontend: `cd` into the GifFrontend directory and run `yarn install`
 3. Install the Foreman gem: run `gem install foreman`
 4. Install dependencies for each application: `cd` into each directory and run `bundle install`
-5. Run the database migrations for each application.
+5. Run the database migrations for each application
 6. Start both applications: `cd` to the project root directory and run `foreman start`
 7. The GifService API will be running at http://localhost:3001
 8. The GifFrontend application will be running at http://localhost:3000
 9. Navigate to http://localhost:3000 in your browser
+10. Use the "Sign In" button to create a new User
 
 # Exercises
 
 GifService
-1. The GifService database is empty, so you'll need to seed it with some GIFs. Fortunately, `seeds.rb` already contains a script to them, all you have to do is run it! (reminder: there is a `rake` command for this)
+1. The GifService database is empty, so you'll need to seed it with some GIFs. Fortunately, `seeds.rb` already contains a script to add them, all you have to do is run it! (reminder: there is a `rake` command for this)
 2. Implement a many-to-many relationship between the Gifs model and the Tags model so that you can start associating Tags to Gifs.
 3. There is an `after_create` callback on the Gif model called `create_tags`. Implement this method so that it creates Tags for the created Gif based on its title (you could split the title into individual words or match words from a specific list of tags). To test your method, either reseed the database with `seeds.rb` or use the rails console to manually run `create_tags` for each Gif.
-4. The GifsController has an `index` action that retrieves all of the Gifs. Implement the JBuilder view for this action so that it returns the id, title and url for each Gif.
-5. Create a new action in the GifsController that accepts a single param named "tag". This action should fetch all Gifs that match the given "tag" and render them using the same JBuilder view that the `index` action uses, update this view to include all of the tags associated with each Gif. Make use of the Tags table when searching rather than just using the title attribute on the Gifs table.
+4. The GifsController has an `index` action that retrieves all of the Gifs. Implement the JBuilder view for this action so that it returns the id, title, url and tags for each Gif.
+5. Create a new action in the GifsController that accepts a single param named "tag". This action should fetch all Gifs that match the given "tag" and render them using the same JBuilder view that the `index` action uses. Make use of the Tags table when searching rather than just using the title attribute on the Gifs table.
 
 GifFrontend
 1. Update the React app on the "feed" view to make a request to the GifService API to retrieve all Gifs when it first mounts. Show each of the Gifs on the "feed" page along with each of the tags that are associated to them. Style the view however you like! 

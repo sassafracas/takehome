@@ -1,7 +1,5 @@
 # Introduction
-This project is a take-home challenge designed to evaluate full stack developers who are interested in working at Dovetale. 
-
-It is structured as two basic Rails applications:
+This project is a take-home challenge designed to evaluate full stack developers who are interested in working at Dovetale. The exercises involve both backend and frontend changes to add functionality to the two Rails applications:
 * GifService - a REST API service that returns GIFs
 * GifFrontend - a web application that allows users to view and save GIFs
 
